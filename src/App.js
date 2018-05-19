@@ -68,7 +68,7 @@ class App extends Component {
               Obtener ritmosustancia
             </button>
           </form>
-          {ritmosustancias.map(RitmoSustancia)}
+          {ritmosustancias.sort((a, b) => b.id - a.id).map(RitmoSustancia)}
         </div>
       </AppWrapper>
     );
