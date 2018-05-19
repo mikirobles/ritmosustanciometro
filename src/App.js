@@ -67,7 +67,7 @@ const BarraSustancia = styled.div`
     content: "";
     width: ${props => props.ritmosustancia || 0}%;
     height: 100%;
-    background: hsl(${props => props.ritmosustancia || 0}, 100% , 50%);
+    background: hsl(${props => props.ritmosustancia || 0}, 100% , 40%);
     position: absolute;
     top: 0;
     left: 0;
