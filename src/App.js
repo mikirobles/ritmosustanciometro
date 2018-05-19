@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import {AppWrapper, BarraSustancia, RitmoSustanciaWrapper} from './styles';
+import { AppWrapper, BarraSustancia, RitmoSustanciaWrapper } from "./styles";
 
 const capitalize = str =>
   str.length ? str[0].toUpperCase() + str.slice(1) : "";
 
-const RitmoSustancia = ({ nombre, ritmosustancia }) => (
-  <RitmoSustanciaWrapper>
+const RitmoSustancia = ({ nombre, ritmosustancia, id }) => (
+  <RitmoSustanciaWrapper key={id}>
     <h3>Nombre: {nombre}</h3>
     <p>Ritmosustancia: {ritmosustancia}</p>
     <BarraSustancia ritmosustancia={ritmosustancia} />
@@ -17,6 +17,7 @@ class App extends Component {
     nombre: "",
     ritmosustancias: [
       {
+        id: new Date().getTime(),
         nombre: "Micael",
         ritmosustancia: 100
       }
@@ -35,6 +36,7 @@ class App extends Component {
       ritmosustancias: [
         ...ritmosustancias,
         {
+          id: new Date().getTime(),
           nombre: nombre,
           ritmosustancia: Math.floor(Math.random() * 100) + 1
         }
