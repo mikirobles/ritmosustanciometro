@@ -9,6 +9,15 @@ to {
 }
 `;
 
+export const widen = ({ritmosustancia}) => keyframes`
+from {
+  width: 0%;
+}
+to {
+  width: ${ritmosustancia}%;
+}
+`;
+
 export const AppWrapper = styled.div`
 width: 100vw;
 height: 100vh;
@@ -63,9 +72,11 @@ margin: 0.2em 0;
 position: relative;
 &:before {
   content: "";
-  width: ${props => props.ritmosustancia || 0}%;
+  // width: ${props => props.ritmosustancia || 0}%;
   height: 100%;
   background: hsl(${props => props.ritmosustancia || 0}, 100%, 40%);
+  animation: ${widen} 1s ease;
+  animation-fill-mode: forwards;
   position: absolute;
   top: 0;
   left: 0;
